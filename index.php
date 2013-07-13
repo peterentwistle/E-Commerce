@@ -7,6 +7,7 @@ include_once("includes/mainIncludes.php");
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" <?php echo $main_css; ?>>
 <title><?php echo $shopTitle; ?></title>
 </head>
 
