@@ -1,7 +1,7 @@
 <?php
 class Shop {
 
-	public function listItems($itemArray, $currency) {
+	public function listItems($itemArray, $currency, $currency_format) {
 		foreach ($itemArray as $itemId => $item) {
 			echo '<p><a href="/shop.php?item='.$itemId.'">'.$item["name"].
 			' costs: '.$this->displayCurrency($currency).
@@ -9,7 +9,7 @@ class Shop {
 		}
 	}
 
-	public function displayItemDetails($itemId, $items) {
+	public function displayItemDetails($itemId, $items, $currency, $currency_format) {
 		$item = $items[$itemId];
 		$details = '';
 		$details .= '<h1>'.$item["name"].'</h1>'."\n";
@@ -24,7 +24,7 @@ class Shop {
 		return $item["name"];
 	}
 
-	public function itemPrice($itemId, $items) {
+	public function itemPrice($itemId, $items, $currency_format) {
 		$item = $items[$itemId];
 		return $this->currencyFormat($currency_format, $item["price"]);
 	}
@@ -35,7 +35,7 @@ class Shop {
 		} else {
 			$basket = $basketSession;
 		}
-		$total = $this->itemPrice($itemId, $items) * $quantity;
+		$total = $this->itemPrice($itemId, $items, $currency_format) * $quantity;
 		$basket[$itemId] = array("item-id" => $itemId,
 								"quantity" => $quantity,
 								"price" => $total);
@@ -63,21 +63,21 @@ class Shop {
 
 		switch ($currency_format) {
 			case 'english':
-				$currencyFormat = number_format($number, 2, '.', ',');
-				return $currencyFormat;
+				$formattedCurrency = number_format($number, 2, '.', ',');
+				return $formattedCurrency;
 				break;
 			case 'european':
-				$currencyFormat = number_format($number, 2, ',', '.');
-				return $currencyFormat;
+				$formattedCurrency = number_format($number, 2, ',', '.');
+				return $formattedCurrency;
 				break;
 			case 'eng_without_thous':
-				$currencyFormat = number_format($number, 2, '.', '');
-				return $currencyFormat;
+				$formattedCurrency = number_format($number, 2, '.', '');
+				return $formattedCurrency;
 				break;
 			default:
-				$currencyFormat = number_format($number, 2, '.', ',');
-				return $currencyFormat;
-				break;
+				$formattedCurrency = number_format($number, 2, '.', ',');
+				return $formattedCurrency;
+				break; 
 		}
 	}
 

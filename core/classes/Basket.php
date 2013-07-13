@@ -6,7 +6,7 @@ class Basket {
     	$this->shop = new Shop();
     }
 
-	public function basketContents($itemArray, $items) {
+	public function basketContents($itemArray, $items, $currency, $currency_format) {
 		$currency = $this->shop->displayCurrency($currency);
 		foreach ($itemArray as $itemId => $data) {
 			$itemName = $this->shop->itemName($itemId, $items);
@@ -15,7 +15,7 @@ class Basket {
 		}
 	}
 
-	public function totalPrice($itemArray, $items) {
+	public function totalPrice($itemArray, $items, $currency, $currency_format) {
 		$total = 0;
 		$currency = $this->shop->displayCurrency($currency);
 		foreach ($itemArray as $itemId => $data) {

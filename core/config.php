@@ -10,8 +10,7 @@ USD - $
 EUR - €
 More currency support coming soon
 */
-$currency = "GDP";
-
+$currency = "GBP";
 /* 
 Set the currency format
 "english" (default)

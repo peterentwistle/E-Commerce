@@ -1,5 +1,5 @@
 <?php
-// Have to start the session first
+// Start the session first
 session_start();
 include_once("includes/mainIncludes.php");
 include_once("includes/shopIncludes.php");
@@ -48,7 +48,7 @@ if (isset($chosenItem)) {
 	for ($i = 1; $i <= 10; $i++) {
 		$quant .= '<option value='.$i.'>'.$i.'</option>'."\n";
 	}
-	echo $shop->displayItemDetails($chosenItem, $items);
+	echo $shop->displayItemDetails($chosenItem, $items, $currency, $currency_format);
 	echo '<form action="shop.php" method="post">'."\n".
 	'<input type="hidden" name="item-id" value='.$chosenItem.'>'."\n".
 	'<select name="quant">'."\n".
@@ -56,7 +56,7 @@ if (isset($chosenItem)) {
 	'</select>'."\n".
 	'<input type="submit" value="Add to Cart" name="submit">';
 } else {
-	$shop->listItems($items, $currency); 
+	$shop->listItems($items, $currency, $currency_format); 
 }
 ?>
 

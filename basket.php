@@ -1,5 +1,5 @@
 <?php
-// Have to start the session first
+// Start the session first
 session_start();
 include_once("includes/mainIncludes.php");
 include_once("includes/basketIncludes.php");
@@ -19,8 +19,8 @@ if (isset($_SESSION['basketSession'])) {
 <?php include_once($header); ?>
 <?php 
 if (isset($basketSession)) {
-	$basket->basketContents($basketSession, $items);
-	echo $basket->totalPrice($basketSession, $items);
+	$basket->basketContents($basketSession, $items, $currency, $currency_format);
+	echo $basket->totalPrice($basketSession, $items, $currency, $currency_format);
 } else {
 	echo '<h1>Your Basket is empty. Take a look at <a href="/shop.php">our shop</a>.</h1>'."\n";
 }
