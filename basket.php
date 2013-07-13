@@ -20,8 +20,9 @@ if (isset($_SESSION['basketSession'])) {
 <?php 
 if (isset($basketSession)) {
 	$basket->basketContents($basketSession, $items);
+	echo $basket->totalPrice($basketSession, $items);
 } else {
-	echo '<h1>Your Basket is empty. Take a look at <a href="/shop.php">our shop</a>.</h1>';
+	echo '<h1>Your Basket is empty. Take a look at <a href="/shop.php">our shop</a>.</h1>'."\n";
 }
 ?>
 <?php include_once($footer); ?>

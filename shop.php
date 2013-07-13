@@ -12,7 +12,7 @@ if (isset($_SESSION['basketSession'])) {
 if (isset($_POST['item-id'])) {
 	$itemId = $_POST['item-id'];
 	$quantity = $_POST['quant'];
-	$shop->addItemToBasket($itemId, $quantity, $basketSession);
+	$shop->addItemToBasket($itemId, $quantity, $basketSession, $items);
 	$basketSession = $_SESSION['basketSession'];
 }
 ?>
@@ -46,14 +46,14 @@ if (isset($basketSession)) {
 if (isset($chosenItem)) {
 	$quant = "";
 	for ($i = 1; $i <= 10; $i++) {
-		$quant .= '<option value='.$i.'>'.$i.'</option>';
+		$quant .= '<option value='.$i.'>'.$i.'</option>'."\n";
 	}
 	echo $shop->displayItemDetails($chosenItem, $items);
-	echo '<form action="shop.php" method="post">'.
-	'<input type="hidden" name="item-id" value='.$chosenItem.'>'.
-	'<select name="quant">'.
-	$quant.
-	'</select>'.
+	echo '<form action="shop.php" method="post">'."\n".
+	'<input type="hidden" name="item-id" value='.$chosenItem.'>'."\n".
+	'<select name="quant">'."\n".
+	$quant."\n".
+	'</select>'."\n".
 	'<input type="submit" value="Add to Cart" name="submit">';
 } else {
 	$shop->listItems($items, $currency); 
