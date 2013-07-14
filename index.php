@@ -1,7 +1,7 @@
 <?php
 // Have to start the session first
 session_start();
-include_once("includes/mainIncludes.php");
+include_once("inc/mainIncludes.php");
 ?>
 <DOCTYPE html>
 <html>

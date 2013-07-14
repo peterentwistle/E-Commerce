@@ -1,8 +1,8 @@
 <?php
 // Start the session first
 session_start();
-include_once("includes/mainIncludes.php");
-include_once("includes/shopIncludes.php");
+include_once("inc/mainIncludes.php");
+include_once("inc/shopIncludes.php");
 if (isset($_GET['item'])) {
 	$chosenItem = ($_GET['item']);/* Use real escape funct when connected to database */
 }

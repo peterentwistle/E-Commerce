@@ -1,8 +1,8 @@
 <?php
 // Start the session first
 session_start();
-include_once("includes/mainIncludes.php");
-include_once("includes/basketIncludes.php");
+include_once("inc/mainIncludes.php");
+include_once("inc/basketIncludes.php");
 if (isset($_SESSION['basketSession'])) {
 	$basketSession = $_SESSION['basketSession'];
 }
