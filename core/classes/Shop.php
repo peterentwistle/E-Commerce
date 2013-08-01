@@ -3,7 +3,7 @@ class Shop {
 
 	public function listItems($itemArray, $currency, $currency_format) {
 		foreach ($itemArray as $itemId => $item) {
-			echo '<p><a href="/shop.php?item='.$itemId.'">'.$item["name"].
+			echo '<p><a href="shop.php?item='.$itemId.'">'.$item["name"].
 			' costs: '.$this->displayCurrency($currency).
 			$this->currencyFormat($currency_format, $item["price"]).'<a></p>';
 		}

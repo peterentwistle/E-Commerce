@@ -1,5 +1,7 @@
 <?php
 // Configuration file - Might remove this later
+define("BASE_URL", "/");
+define("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"]."/");
 $shopTitle = "Peter's E-Shop";
 $footerCopy = "&copy;".date('Y')." Peter Entwistle"; 
 /*
