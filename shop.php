@@ -51,7 +51,7 @@ if (isset($chosenItem)) {
 	echo $shop->displayItemDetails($chosenItem, $items, $currency, $currency_format);
 	echo '<form action="shop.php" method="post">'."\n".
 	'<input type="hidden" name="item-id" value='.$chosenItem.'>'."\n".
-	'<select name="quant">'."\n".
+	'<select name="quant" id="quant">'."\n".
 	$quant."\n".
 	'</select>'."\n".
 	'<input type="submit" value="Add to Cart" name="submit">';

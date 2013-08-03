@@ -11,7 +11,7 @@ if (isset($_SESSION['basketSession'])) {
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" <?php echo $main_css; ?>>
+<link rel="stylesheet" type="text/css" <?php echo $main_css; ?> >
 <title>Basket - <?php echo $shopTitle; ?></title>
 </head>
 
@@ -22,7 +22,7 @@ if (isset($basketSession)) {
 	$basket->basketContents($basketSession, $items, $currency, $currency_format);
 	echo $basket->totalPrice($basketSession, $items, $currency, $currency_format);
 } else {
-	echo '<h1>Your Basket is empty. Take a look at <a href="/shop.php">our shop</a>.</h1>'."\n";
+	echo '<h1>Your Basket is empty. Take a look at <a href="shop.php">our shop</a>.</h1>'."\n";
 }
 ?>
 <?php include_once($footer); ?>
