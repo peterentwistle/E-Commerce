@@ -4,7 +4,7 @@ class Basket {
 
 	public function __construct() {
     	$this->shop = new Shop();
-    }
+	}
 
 	public function basketContents($itemArray, $items, $currency, $currency_format) {
 		$currency = $this->shop->displayCurrency($currency);
