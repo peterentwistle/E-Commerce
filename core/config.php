@@ -17,6 +17,8 @@ $db_user = "DBUSER";
 $db_pass = "CHANGEME";
 //Database Name
 $db_name = "DB_NAME";
+///Shop Data Encryption
+$shopEncryptionKey = "RANDOMTEXTHERE";
 ////DO NOT CHANGE
 define("BASE_URL", "/");
 define("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"]."/");

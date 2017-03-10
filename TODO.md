@@ -1,12 +1,14 @@
 To Do:
 ==========
 
+- Add string encryption
 - Make clean urls
 - Use name of item in url instead of an id
 - Integrate paypal for payment option
 - MySQL database support
 - Add an admin panel
-- File protection system
+- File protection system (For digital downloads)
+- Add the account system
 
 Un Important To Do's:
 =====================
