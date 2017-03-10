@@ -1,7 +1,7 @@
 <?php
 //Just a placeholder for making the site more modular
 ?>
-<h1>SITE NAME</h1>
+<h1><?php echo $siteData[0]; ?></h1>
 <div id="header">
 	<p>Header</p>
 	<ul>

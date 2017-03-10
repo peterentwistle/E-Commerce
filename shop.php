@@ -30,7 +30,7 @@ if (isset($_POST['item-id'])) {
 if (isset($chosenItem)) {
 	echo $shop->itemName($chosenItem, $items)." - ".$shopTitle;
 } else {
-	echo "Shop - ".$shopTitle;
+	echo "Shop - ".<?php echo $siteData[0]; ?>;
 }
 ?>
 </title>
