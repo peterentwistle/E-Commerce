@@ -2,8 +2,8 @@
 // Configuration file - Will be changed to load in from the DB
 define("BASE_URL", "/");
 define("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"]."/");
-$shopTitle = "Peter's E-Shop";
-$footerCopy = '&copy;'.date('Y').' Peter Entwistle. Check out the source code on <a href="http://github.com/Rover656/E-Commerce">GitHub</a>'; //GitHub link to the Rover656 Fork
+$shopTitle = "E-Commerce the Open Source Project";
+$footerCopy = '&copy;'.date('Y').' Peter Entwistle and Rover656. Check out the source code on <a href="http://github.com/Rover656/E-Commerce">GitHub</a>'; //GitHub link to the Rover656 Fork
 /*
 Set shop currency
 Currencies available:
