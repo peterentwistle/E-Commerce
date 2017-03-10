@@ -29,7 +29,7 @@ echo $shop->randItems($items, $currency, $currency_format);
 <?php
 	include_once('core/classes/REnc.php');
 	$text = "HELLO";
-	$password = "GOODBYE</br>";
+	$password = "GOODBYE";
 	echo "TEXT = " . $text . "</br>";
 	echo "PASSWORD = ". $password . "</br>";
 	echo "ENCRYPTED = " . REnc_Encrypt($text, $password) . "</br>";

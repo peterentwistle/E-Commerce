@@ -173,7 +173,7 @@ case substr(md5($password . md5("hT")), 0, 4):
 $replace = "0";
 break;
 case substr(md5($password . md5("s6")), 0, 4):
-$replace = 1;
+$replace = "1";
 break;
 case substr(md5($password . md5("9D")), 0, 4):
 $replace = "2";
