@@ -1,4 +1,5 @@
 <?php
+//TODO: Clean up and revise/add more (When DB Support Enabled)
 class Shop {
 
 	public function listItems($itemArray, $currency, $currency_format) {

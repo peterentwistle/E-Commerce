@@ -1,9 +1,6 @@
 <?php
 // Begin the site session
 session_start();
-//Old Includes
-include_once("inc-old/mainIncludes.php");
-include_once("inc-old/shopIncludes.php");
 //New Includes
 require_once("inc/includes.php");
 //STORE CODE
