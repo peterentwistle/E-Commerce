@@ -2,8 +2,8 @@
 // Begin the site session
 session_start();
 //TODO: Update the inc folder then migrate lib to inc
-include_once("inc/mainIncludes.php");
-include_once("inc/shopIncludes.php");
+include_once("inc-old/mainIncludes.php");
+include_once("inc-old/shopIncludes.php");
 ?>
 <DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@ include_once("inc/shopIncludes.php");
 <body>
 <?php
 	//Load in the header
-	require_once('lib/header.php');
+	require_once('inc/header.php');
 ?>
 
 <!-- Content -->
@@ -31,7 +31,7 @@ if (isset($basketSession)) {
 
 <?php
 	//Load in the footer
-	require_once('lib/footer.php');
+	require_once('inc/footer.php');
 ?>
 
 </body>
