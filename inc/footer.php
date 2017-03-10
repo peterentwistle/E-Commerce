@@ -1,3 +1,6 @@
+<?php
+//Just a placeholder for making the site more modular
+?>
 <div id="footer">
-	<p><?php echo $footerCopy; ?></p>
+	<p>&copy; Website Owner 2017.</p>
 </div>
