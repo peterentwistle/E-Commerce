@@ -217,8 +217,8 @@ break;
 default:
 $temp = str_split($char, 1);
 $replace = $temp[0];
- }
- $replaced[ ] = $replace;
+}
+$replaced[ ] = $replace;
 }
 return str_replace('space', ' ', implode($replaced));
 }
@@ -226,8 +226,8 @@ function REnc_Encrypt($string, $password) {
 $chars = str_split($string, 1);
 $replaced[ ] = substr(md5($password . md5("RE")), 0, 4);
 foreach($chars as $ch) {
- $char = str_replace(' ', 'space', $ch);
- switch($char) {
+$char = str_replace(' ', 'space', $ch);
+switch($char) {
 case "A":
 $replace = substr(md5($password . md5("Us")), 0, 4);
 break;

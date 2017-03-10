@@ -33,7 +33,7 @@ echo $shop->randItems($items, $currency, $currency_format);
 	echo "TEXT = " . $text . "</br>";
 	echo "PASSWORD = ". $password . "</br>";
 	echo "ENCRYPTED = " . REnc_Encrypt($text, $password) . "</br>";
-	echo "DECRYPTED = " . REnc_Decrypt($text, $password) . "</br>";
+	echo "DECRYPTED = " . REnc_Decrypt(REnc_Encrypt($text, $password), $password) . "</br>";
 ?>
 
 <?php
