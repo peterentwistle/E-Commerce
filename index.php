@@ -13,14 +13,21 @@ include_once("inc/shopIncludes.php");
 </head>
 
 <body>
-<?php include_once($header); ?>
+<?php
+	//Load in the header
+	require_once('lib/header.php');
+?>
 
 <h1>Featured Items</h1>
 <?php
 echo $shop->randItems($items, $currency, $currency_format);
 ?>
 
-<?php include_once($footer); ?>
+
+<?php
+	//Load in the footer
+	require_once('lib/footer.php');
+?>
 
 </body>
 </html>
