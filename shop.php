@@ -1,8 +1,10 @@
 <?php
-// Start the session first
+// Begin the site session
 session_start();
-include_once("inc/mainIncludes.php");
-include_once("inc/shopIncludes.php");
+//TODO: Update the inc folder then migrate lib to inc
+include_once("inc-old/mainIncludes.php");
+include_once("inc-old/shopIncludes.php");
+//STORE CODE
 if (isset($_GET['item'])) {
 	$chosenItem = ($_GET['item']);/* Use real escape funct when connected to database */
 }
@@ -21,7 +23,6 @@ if (isset($_POST['item-id'])) {
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" <?php echo $main_css; ?>>
-<script type="text/javascript" src="js/core.js"></script>
 <title>
 <?php
 if (isset($chosenItem)) {
@@ -34,8 +35,12 @@ if (isset($chosenItem)) {
 </head>
 
 <body>
-<?php include_once($header); ?>
+<?php
+	//Load in the header
+	require_once('inc/header.php');
+?>
 
+<!-- Content -->
 <?php 
 if (isset($basketSession)) {
 	print_r($basketSession);
@@ -60,7 +65,10 @@ if (isset($chosenItem)) {
 }
 ?>
 
-<?php include_once($footer); ?>
+<?php
+	//Load in the footer
+	require_once('inc/footer.php');
+?>
 
 </body>
 </html>
