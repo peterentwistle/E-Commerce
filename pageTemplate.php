@@ -26,6 +26,7 @@ echo $shop->randItems($items, $currency, $currency_format);
 ?>
 
 <?php
+	//Load in the footer
 	require_once('lib/footer.php');
 ?>
 
