@@ -1,9 +1,11 @@
 <?php
 // Begin the site session
 session_start();
-//TODO: Update the inc folder then migrate lib to inc
+//Old Includes
 include_once("inc-old/mainIncludes.php");
 include_once("inc-old/shopIncludes.php");
+//New Includes
+require_once("inc/includes.php");
 //STORE CODE
 if (isset($_GET['item'])) {
 	$chosenItem = ($_GET['item']);/* Use real escape funct when connected to database */
