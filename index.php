@@ -25,6 +25,17 @@ require_once("inc/includes.php");
 echo $shop->randItems($items, $currency, $currency_format);
 ?>
 
+<h1>Encryption Check</h1>
+<?php
+	include_once('core/classes/REnc.php');
+	$text = "HELLO";
+	$password = "GOODBYE</br>";
+	echo "TEXT = " . $text . "</br>";
+	echo "PASSWORD = ". $password . "</br>";
+	echo "ENCRYPTED = " . REnc_Encrypt($text, $password) . "</br>";
+	echo "DECRYPTED = " . REnc_Decrypt($text, $password) . "</br>";
+?>
+
 <?php
 	//Load in the footer
 	require_once('inc/footer.php');
