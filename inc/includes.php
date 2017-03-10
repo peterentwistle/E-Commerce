@@ -1,6 +1,6 @@
 <?php
 	//This script just adds all the config into a massive array for easy access
-	require_once('../core/config.php');
+	include_once(BASE_URL . 'core/config.php');
 	$siteData[0] = $shopTitle;
 	$siteData[1] = $footerCopy;
 	$siteData[2] = $currency;
