@@ -14,6 +14,7 @@ class Item {
 				$item[3] = $row["Quantity"];
 				$item[4] = $row["Enabled"];
 				$item[5] = $row["Featured"];
+				$item[6] = $row["Price"];
 			}
 		} else {
 			$item[0] = -1;
@@ -22,6 +23,7 @@ class Item {
 			$item[3] = -1;
 			$item[4] = -1;
 			$item[5] = -1;
+			$item[6] = -1;
 		}
 		return $item;
 	}
