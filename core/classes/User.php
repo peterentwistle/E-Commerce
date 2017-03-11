@@ -17,7 +17,6 @@ class User {
 		$sql = "SELECT Token FROM logintokens WHERE Token='{$token}'";
 		$result = $dbcon->query($sql);
 		if ($result->num_rows > 0) {
-			// output data of each row
 			while($row = $result->fetch_assoc()) {
 				//TODO: Make it so that there is a token expiry time
 				return true;
@@ -33,7 +32,6 @@ class User {
 		$sql = "SELECT Token FROM logintokens WHERE Token='{$token}'";
 		$result = $dbcon->query($sql);
 		if ($result->num_rows > 0) {
-			// output data of each row
 			while($row = $result->fetch_assoc()) {
 				return GenerateToken();
 			}
