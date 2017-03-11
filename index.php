@@ -27,13 +27,12 @@ echo $shop->randItems($items, $currency, $currency_format);
 
 <h1>Encryption Check</h1>
 <?php
-	include_once('core/classes/REnc.php');
 	$text = "HELLO";
 	$password = "GOODBYE";
 	echo "TEXT = " . $text . "</br>";
 	echo "PASSWORD = ". $password . "</br>";
-	echo "ENCRYPTED = " . REnc_Encrypt($text, $password) . "</br>";
-	echo "DECRYPTED = " . REnc_Decrypt(REnc_Encrypt($text, $password), $password) . "</br>";
+	echo "ENCRYPTED = " . $REnc->REnc_Encrypt($text, $password) . "</br>";
+	echo "DECRYPTED = " . $REnc->REnc_Decrypt($REnc->REnc_Encrypt($text, $password), $password) . "</br>";
 ?>
 
 <?php

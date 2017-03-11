@@ -5,6 +5,7 @@ This script was written by Reece Mackie (Rover656) for my own websites.
 Please add appropriate credit when using, and please ask Rover656 before merging any PR's
 Because you could break something on someones server if they update.
 */
+class REnc {
 function REnc_Decrypt($originalstring, $password) {
 $string = $originalstring;
 $chars = str_split($string , 4);
@@ -439,5 +440,6 @@ $i++;
  $replaced[ ] = $replace;
 }
 return rtrim(implode($replaced),',');
+}
 }
 ?>
