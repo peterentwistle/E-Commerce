@@ -19,4 +19,7 @@
 	require_once("/core/items.php");
 	require_once("/core/classes/Shop.php");
 	$shop = new Shop;
+	//Encryption Includes
+	require_once("/core/classes/REnc.php");
+	$REnc = new REnc;
 ?>

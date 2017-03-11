@@ -1,7 +1,6 @@
 To Do:
 ==========
 
-- Add string encryption
 - Make clean urls
 - Use name of item in url instead of an id
 - Integrate paypal for payment option

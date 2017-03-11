@@ -22,4 +22,5 @@ $shopEncryptionKey = "RANDOMTEXTHERE";
 ////DO NOT CHANGE
 define("BASE_URL", "/");
 define("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"]."/");
+ini_set('default_charset', 'utf-8');
 ?>
