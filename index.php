@@ -15,7 +15,7 @@ require_once("inc/includes.php");
 <body>
 <?php
 	//Load in the header
-	require_once('inc/header.php');
+	require_once('/themes/Peter-Entwistle/inc/header.php');
 ?>
 
 <!-- Content -->
@@ -29,7 +29,7 @@ if (isset($_GET['src'])) {
 
 <?php
 	//Load in the footer
-	require_once('inc/footer.php');
+	require_once('/themes/Peter-Entwistle/inc/footer.php');
 ?>
 
 </body>
