@@ -1,4 +1,5 @@
 <?php
+//TODO: Clean up and revise/add more (When DB Support Enabled)
 class Shop {
 
 	public function listItems($itemArray, $currency, $currency_format) {
@@ -65,20 +66,10 @@ class Shop {
 	}
 
 	public function displayCurrency($currency) {
-		switch ($currency) {
-			case 'GBP':
-				return "£";
-				break;
-			case 'USD':
-				return "$";
-				break;
-			case 'EUR':
-				return "€";
-				break;
-			default:
-				return "£";
-				break;
-		}
+		//I am creating a custom currencyConfig for this
+		require_once("/inc/includes.php");
+		$Currency = new Currency;
+		return $Currency->displayCurrency($currency);
 	}
 
 	public function currencyFormat($currency_format, $number) {

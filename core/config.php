@@ -1,29 +1,26 @@
 <?php
-// Configuration file - Might remove this later
+//////Configuration file - Will be changed to load in from the DB
+////Changable by User - For help see GitHub WiKi
+///Shop Details
+$shopTitle = "E-Commerce the Open Source Project";
+$footerCopy = '&copy;'.date('Y').' Peter Entwistle and Rover656. Check out the source code on <a href="http://github.com/Rover656/E-Commerce">GitHub</a>'; //GitHub link to the Rover656 Fork
+///Set shop currency
+$currency = "GBP";
+///Set the currency format
+$currency_format = "english";
+///Database Details
+//Database host
+$db_host = "localhost";
+//Database User
+$db_user = "root";
+//Database Password
+$db_pass = "password";
+//Database Name
+$db_name = "E-Commerce";
+///Shop Data Encryption
+$shopEncryptionKey = "RANDOMTEXTHERE";
+////DO NOT CHANGE
 define("BASE_URL", "/");
 define("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"]."/");
-$shopTitle = "Peter's E-Shop";
-$footerCopy = "&copy;".date('Y')." Peter Entwistle"; 
-/*
-Set shop currency
-Currencies available:
-GBP - £
-USD - $
-EUR - €
-More currency support coming soon
-*/
-$currency = "GBP";
-/* 
-Set the currency format
-"english" (default)
-	e.g. 1,235.56
-
-"european" notation
-	e.g. 1.234,56
-
-"eng_without_thous" english notation without thousands separator
-	e.g. 1234.56
-*/
-$currency_format = "english";
-
+ini_set('default_charset', 'utf-8');
 ?>

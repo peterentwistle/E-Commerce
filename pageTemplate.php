@@ -9,15 +9,7 @@ require_once("inc/includes.php");
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" <?php echo $main_css; ?>>
-<title>
-<?php
-if (isset($chosenItem)) {
-	echo $shop->itemName($chosenItem, $items)." - ".$shopTitle;
-} else {
-	echo "Shop - ". $siteData[0];
-}
-?>
-</title>
+<title><?php echo $siteData[0]; ?></title>
 </head>
 
 <body>
@@ -27,9 +19,6 @@ if (isset($chosenItem)) {
 ?>
 
 <!-- Content -->
-<?php
-	print_r($Item->LoadItem(0));
-?>
 
 <?php
 	//Load in the footer

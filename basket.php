@@ -1,22 +1,24 @@
 <?php
-// Start the session first
+// Begin the site session
 session_start();
-include_once("inc/mainIncludes.php");
-include_once("inc/basketIncludes.php");
-if (isset($_SESSION['basketSession'])) {
-	$basketSession = $_SESSION['basketSession'];
-}
+//New Includes
+require_once("inc/includes.php");
 ?>
 <DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" <?php echo $main_css; ?> >
-<title>Basket - <?php echo $shopTitle; ?></title>
+<link rel="stylesheet" type="text/css" <?php echo $main_css; ?>>
+<title>Basket - <?php echo $siteData[0]; ?></title>
 </head>
 
 <body>
-<?php include_once($header); ?>
+<?php
+	//Load in the header
+	require_once('inc/header.php');
+?>
+
+<!-- Content -->
 <?php 
 if (isset($basketSession)) {
 	$basket->basketContents($basketSession, $items, $currency, $currency_format);
@@ -25,7 +27,11 @@ if (isset($basketSession)) {
 	echo '<h1>Your Basket is empty. Take a look at <a href="shop.php">our shop</a>.</h1>'."\n";
 }
 ?>
-<?php include_once($footer); ?>
+
+<?php
+	//Load in the footer
+	require_once('inc/footer.php');
+?>
 
 </body>
 </html>
