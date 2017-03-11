@@ -6,7 +6,7 @@ To Do:
 - Integrate paypal for payment option
 - Add an admin panel
 - File protection system (For digital downloads)
-- Add the account system
+- Finish the account system
 
 Un Important To Do's:
 =====================
