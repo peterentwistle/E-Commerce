@@ -1,5 +1,4 @@
 <?php
-//TODO: FIX THE DECRYPTER
 /*
 This script was written by Reece Mackie (Rover656) for my own websites.
 Please add appropriate credit when using, and please ask Rover656 before merging any PR's
