@@ -1,0 +1,10 @@
+.featured {
+	float: left;
+	margin: 0px 40px;
+	width: 224px;
+	text-align: center;
+	cursor: hand;
+}
+#footer {
+	clear: left;
+}

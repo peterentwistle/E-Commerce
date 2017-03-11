@@ -11,6 +11,11 @@ $db_pass = "password";
 $db_name = "E-Commerce";
 //Shop Data Encryption
 $shopEncryptionKey = "RANDOMTEXTHERE"; //NOT LOADED BY DB FOR SAFETY
+/////////////////TESTING\\\\\\\\\\\\\\\\\\\\\
+
+$currentTheme = "Peter-Entwistle";
+
+
 
 ///Load DB
 require_once("/core/dbcon.php");
