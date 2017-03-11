@@ -4,10 +4,12 @@ class User {
 		require_once("/inc/includes.php");
 		global $dbcon;
 		$userToken = GenerateToken();
+		//TODO: Do login script
 	}
 	public function DoLogout($token) {
 		require_once("/inc/includes.php");
 		global $dbcon;
+		//TODO: Do logout script
 	}
 	public function CheckToken($token) {
 		require_once("inc/includes.php");
@@ -39,5 +41,6 @@ class User {
 			return $token;
 		}
 	}
+	///////TODO: Make user data a thing
 }
 ?>
