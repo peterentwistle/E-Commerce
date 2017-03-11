@@ -13,6 +13,7 @@ class Item {
 				$item[2] = $row["Type"];
 				$item[3] = $row["Quantity"];
 				$item[4] = $row["Enabled"];
+				$item[5] = $row["Featured"];
 			}
 		} else {
 			$item[0] = -1;
@@ -20,8 +21,12 @@ class Item {
 			$item[2] = -1;
 			$item[3] = -1;
 			$item[4] = -1;
+			$item[5] = -1;
 		}
 		return $item;
+	}
+	public function GetFeaturedItems() {
+		//Placeholder
 	}
 }
 ?>
