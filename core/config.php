@@ -14,7 +14,7 @@ $shopEncryptionKey = "RANDOMTEXTHERE"; //NOT LOADED BY DB FOR SAFETY
 /////////////////TESTING\\\\\\\\\\\\\\\\\\\\\
 
 $currentTheme = "Peter-Entwistle";
-
+include_once("themeControl.php");
 
 
 ///Load DB
