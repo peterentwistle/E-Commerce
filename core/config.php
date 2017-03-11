@@ -12,11 +12,11 @@ $currency_format = "english";
 //Database host
 $db_host = "localhost";
 //Database User
-$db_user = "DBUSER";
+$db_user = "root";
 //Database Password
-$db_pass = "CHANGEME";
+$db_pass = "password";
 //Database Name
-$db_name = "DB_NAME";
+$db_name = "E-Commerce";
 ///Shop Data Encryption
 $shopEncryptionKey = "RANDOMTEXTHERE";
 ////DO NOT CHANGE
