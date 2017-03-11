@@ -3,19 +3,6 @@
 session_start();
 //New Includes
 require_once("inc/includes.php");
-//STORE CODE
-if (isset($_GET['item'])) {
-	$chosenItem = ($_GET['item']);/* Use real escape funct when connected to database */
-}
-if (isset($_SESSION['basketSession'])) {
-	$basketSession = $_SESSION['basketSession'];
-}
-if (isset($_POST['item-id'])) {
-	$itemId = $_POST['item-id'];
-	$quantity = $_POST['quant'];
-	$shop->addItemToBasket($itemId, $quantity, $basketSession, $items);
-	$basketSession = $_SESSION['basketSession'];
-}
 ?>
 <DOCTYPE html>
 <html>
@@ -40,28 +27,8 @@ if (isset($chosenItem)) {
 ?>
 
 <!-- Content -->
-<?php 
-if (isset($basketSession)) {
-	print_r($basketSession);
-}
-?>
-
 <?php
-if (isset($chosenItem)) {
-	$quant = "";
-	for ($i = 1; $i <= 10; $i++) {
-		$quant .= '<option value='.$i.'>'.$i.'</option>'."\n";
-	}
-	echo $shop->displayItemDetails($chosenItem, $items, $currency, $currency_format);
-	echo '<form action="shop.php" method="post">'."\n".
-	'<input type="hidden" name="item-id" value='.$chosenItem.'>'."\n".
-	'<select name="quant" id="quant">'."\n".
-	$quant."\n".
-	'</select>'."\n".
-	'<input type="submit" value="Add to Cart" name="submit">';
-} else {
-	$shop->listItems($items, $currency, $currency_format); 
-}
+	print_r($Item->LoadItem(0));
 ?>
 
 <?php
