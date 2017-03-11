@@ -14,6 +14,7 @@ class Item {
 				$item[4] = $row["Enabled"];
 				$item[5] = $row["Featured"];
 				$item[6] = $row["Price"];
+				$item[7] = $row["Image"];
 			}
 		} else {
 			$item[0] = -1;
@@ -23,6 +24,7 @@ class Item {
 			$item[4] = -1;
 			$item[5] = -1;
 			$item[6] = -1;
+			$item[7] = "NULL";
 		}
 		return $item;
 	}

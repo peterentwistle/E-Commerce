@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 11, 2017 at 05:17 PM
+-- Generation Time: Mar 11, 2017 at 06:24 PM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -56,7 +56,8 @@ CREATE TABLE `items` (
   `Price` int(21) NOT NULL,
   `Quantity` int(21) NOT NULL,
   `Enabled` int(21) NOT NULL,
-  `Featured` int(21) NOT NULL
+  `Featured` int(21) NOT NULL,
+  `Image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
