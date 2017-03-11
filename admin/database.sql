@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 11, 2017 at 04:28 PM
+-- Generation Time: Mar 11, 2017 at 04:35 PM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -36,6 +36,33 @@ CREATE TABLE `items` (
   `Enabled` int(21) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logintokens`
+--
+
+CREATE TABLE `logintokens` (
+  `id` int(21) NOT NULL,
+  `Username` varchar(255) NOT NULL,
+  `Token` varchar(255) NOT NULL,
+  `Expiry` int(21) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(21) NOT NULL,
+  `Username` varchar(225) NOT NULL,
+  `Password` varchar(225) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `Enabled` int(21) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Indexes for dumped tables
 --
@@ -47,6 +74,18 @@ ALTER TABLE `items`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `logintokens`
+--
+ALTER TABLE `logintokens`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -54,6 +93,16 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
+  MODIFY `id` int(21) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `logintokens`
+--
+ALTER TABLE `logintokens`
+  MODIFY `id` int(21) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
   MODIFY `id` int(21) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

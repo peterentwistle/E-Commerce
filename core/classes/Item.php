@@ -1,7 +1,7 @@
 <?php
 class Item {
 	public function LoadItem($id) {
-		require_once("/core/dbcon.php");
+		require_once("/inc/includes.php");
 		global $dbcon;
 		$sql = "SELECT id, Name, Type, Quantity FROM items WHERE id='{$id}'";
 		$result = $dbcon->query($sql);
