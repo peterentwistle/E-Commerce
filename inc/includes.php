@@ -7,7 +7,7 @@
 	$siteData[1] = $footerCopy;
 	$siteData[2] = $currency;
 	$siteData[3] = $currency_format;
-	$main_css = 'href="style/css/main.css"';
+	$main_css = 'href="' . $themeUri . 'style/css/main.css"';
 	require_once("/core/config.php");
     require_once("/core/dbcon.php");
 	//Basket Includes

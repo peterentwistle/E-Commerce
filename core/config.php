@@ -13,7 +13,7 @@ $db_name = "E-Commerce";
 $shopEncryptionKey = "RANDOMTEXTHERE"; //NOT LOADED BY DB FOR SAFETY
 /////////////////TESTING\\\\\\\\\\\\\\\\\\\\\
 
-$currentTheme = "Peter-Entwistle";
+$currentTheme = "default";
 include_once("themeControl.php");
 
 
