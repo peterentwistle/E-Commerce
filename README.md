@@ -1,5 +1,8 @@
-E-Commerce
+ E-Commerce
 ==========
 
-A flexible open source E-Commerce system for PHP. By peterentwistle and adapted by Rover656 to enable custom login systems.
-This fork is intended for software distribution stores.
+A flexible open source E-Commerce system for PHP. By Peter Entwistle and adapted by Reece Mackie (Rover656) to enable custom login systems.
+This fork is intended for software distribution stores, but will eventually be updated to work with physical products.
+
+HELP NEEDED:
+I may need some help come to making the PayPal integration and improving the Encryption before release
