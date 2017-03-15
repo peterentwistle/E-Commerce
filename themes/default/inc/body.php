@@ -16,15 +16,3 @@
 			?>
         </div> <!-- /.container -->
     </div> <!-- /.content-section -->
-
-    <?php
-	include_once($themeUri . "inc/footer.php");
-    ?>
-
-    
-    <script src="js/vendor/jquery-1.10.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-    <script src="js/jquery.easing-1.3.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
