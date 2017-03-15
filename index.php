@@ -17,5 +17,9 @@ require_once("inc/includes.php");
 	//Load in the body
 	require_once($themeUri . '/inc/body.php');
 ?>
+	
+<?php
+	include_once($themeUri . "inc/footer.php");
+?>
 </body>
 </html>
