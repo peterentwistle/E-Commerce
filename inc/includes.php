@@ -1,5 +1,5 @@
 <?php
-	/////TODO: FIX DEFINED LOCATIONS (NEED FOR SUBDIRECTORIES I THINK)
+	/////TODO: FIX DEFINED LOCATIONS (WORKS NOW)
 	//This script just adds all the config into a massive array for easy access
 	//Normal Includes
 	require_once($_SERVER["DOCUMENT_ROOT"] . $_SERVER["REQUEST_URI"] . 'core/config.php');
