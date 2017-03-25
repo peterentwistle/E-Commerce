@@ -5,4 +5,7 @@
 	<theme_version>V1.0</theme_version>
 	<theme_description>The Default Theme</theme_description>
 	<theme_id>default</theme_id>
+	<theme_contents>
+		<comment>TO DO</comment>
+	</theme_contents>
 </manifest>
