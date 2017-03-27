@@ -102,7 +102,7 @@ class Shop {
 			return $output;
 		} else if ($numItems <= 2) {
 			for($i = 1; $i <=2; $i++) {
-				$output .= '<div class="featured" onclick="location.href=\'shop.php?item='.$i.'\'">'.
+				$output .= '<div class="featured" onclick="location.href=\'index.php?src=shop&item='.$i.'\'">'.
 				$this->homeItemDisplay($i, $items, $currency, $currency_format)
 				.'<div>';
 			}
@@ -113,7 +113,7 @@ class Shop {
 				if (in_array($randNum, $itemArray)) {
 					$i--;
 				} else {
-					$output .= '<div class="featured" onclick="location.href=\'shop.php?item='.$randNum.'\'">'.
+					$output .= '<div class="featured" onclick="location.href=\'index.php?src=shop&item='.$randNum.'\'">'.
 					$this->homeItemDisplay($randNum, $items, $currency, $currency_format)
 					.'</div>';
 					array_push($itemArray, $randNum);
