@@ -10,6 +10,6 @@ echo $shop->randItems($items, $currency, $currency_format);
 	$password = "GOODBYE";
 	echo "TEXT = " . $text . "</br>";
 	echo "PASSWORD = ". $password . "</br>";
-	echo "ENCRYPTED = " . $REnc->REnc_Encrypt($text, $password) . "</br>";
-	echo "DECRYPTED = " . $REnc->REnc_Decrypt($REnc->REnc_Encrypt($text, $password), $password) . "</br>";
+	echo "ENCRYPTED = " . $REnc->REnc_Encrypt_V3_Short($text, $password) . "</br>";
+	echo "DECRYPTED = " . $REnc->REnc_Decrypt_V3_Short($REnc->REnc_Encrypt_V3_Short($text, $password), $password) . "</br>";
 ?>
