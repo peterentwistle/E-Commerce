@@ -1,7 +1,7 @@
 To Do:
 ==========
 
-- [ ] Fix all known issues
+- [x] Fix all known issues
 - [ ] Make clean urls/Use name of item in url instead of an id
 - [ ] Add an admin panel
 - [ ] File protection system (For digital downloads)
