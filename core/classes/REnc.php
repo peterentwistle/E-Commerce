@@ -447,17 +447,17 @@ class REnc
 		}
 		return rtrim(implode($replaced), ',');
 	}
-	//V3 Short Decryption
+//V3 Short Decryption
 	function REnc_Decrypt_V3_Short($originalstring, $password)
 	{
 		$string = $originalstring;
 		$chars  = str_split($string, 4);
 		foreach ($chars as $char) {
 			switch ($char) {
-				case substr(md5($password . md5("RENCV3-SHORT")), 0, 4):
+				case substr(md5($password . sha1("RENCV3-SHORT")), 0, 4):
 					$replace = ""; //Removes the 'RENCV3-SHORT' prefix
 					break;
-				case substr(md5($password . md5("RENCV3-LONG")), 0, 6):
+				case substr(md5($password . sha1("RENCV3-LONG")), 0, 6):
 					//Uh oh - Redirect to long
 					REnc_Decrypt_V3_Long($originalstring, $password);
 					exit;
@@ -756,10 +756,10 @@ class REnc
 		$chars  = str_split($string, 6);
 		foreach ($chars as $char) {
 			switch ($char) {
-				case substr(md5($password . md5("RENCV3-LONG")), 0, 6):
+				case substr(md5($password . sha1("RENCV3-LONG")), 0, 6):
 					$replace = ""; //Removes the 'RENCV3-LONG' prefix
 					break;
-				case substr(md5($password . md5("RENCV3-SHORT")), 0, 6):
+				case substr(md5($password . sha1("RENCV3-SHORT")), 0, 6):
 					//Uh oh - Redirect to short
 					REnc_Decrypt_V3_Short($originalstring, $password);
 					exit;
@@ -1055,288 +1055,288 @@ class REnc
 	function REnc_Encrypt_V3_Short($string, $password)
 	{
 		$chars      = str_split($string, 1);
-		$replaced[] = substr(md5($password . md5("RENCV3-SHORT")), 0, 4);
+		$replaced[] = substr(md5($password . sha1("RENCV3-SHORT")), 0, 4);
 		foreach ($chars as $ch) {
 			$char = str_replace(' ', 'space', $ch);
 			switch ($char) {
 				case "A":
-					$replace = substr(md5($password . md5("DyW")), 0, 4);
+					$replace = substr(md5($password . sha1("DyW")), 0, 4);
 					break;
 				case "a":
-					$replace = substr(md5($password . md5("gJx")), 0, 4);
+					$replace = substr(md5($password . sha1("gJx")), 0, 4);
 					break;
 				case "B":
-					$replace = substr(md5($password . md5("juK")), 0, 4);
+					$replace = substr(md5($password . sha1("juK")), 0, 4);
 					break;
 				case "b":
-					$replace = substr(md5($password . md5("szu")), 0, 4);
+					$replace = substr(md5($password . sha1("szu")), 0, 4);
 					break;
 				case "C":
-					$replace = substr(md5($password . md5("0cJ")), 0, 4);
+					$replace = substr(md5($password . sha1("0cJ")), 0, 4);
 					break;
 				case "c":
-					$replace = substr(md5($password . md5("ujk")), 0, 4);
+					$replace = substr(md5($password . sha1("ujk")), 0, 4);
 					break;
 				case "D":
-					$replace = substr(md5($password . md5("VpE")), 0, 4);
+					$replace = substr(md5($password . sha1("VpE")), 0, 4);
 					break;
 				case "d":
-					$replace = substr(md5($password . md5("Lir")), 0, 4);
+					$replace = substr(md5($password . sha1("Lir")), 0, 4);
 					break;
 				case "E":
-					$replace = substr(md5($password . md5("kUO")), 0, 4);
+					$replace = substr(md5($password . sha1("kUO")), 0, 4);
 					break;
 				case "e":
-					$replace = substr(md5($password . md5("jW2")), 0, 4);
+					$replace = substr(md5($password . sha1("jW2")), 0, 4);
 					break;
 				case "F":
-					$replace = substr(md5($password . md5("lMh")), 0, 4);
+					$replace = substr(md5($password . sha1("lMh")), 0, 4);
 					break;
 				case "f":
-					$replace = substr(md5($password . md5("FGq")), 0, 4);
+					$replace = substr(md5($password . sha1("FGq")), 0, 4);
 					break;
 				case "G":
-					$replace = substr(md5($password . md5("UGC")), 0, 4);
+					$replace = substr(md5($password . sha1("UGC")), 0, 4);
 					break;
 				case "g":
-					$replace = substr(md5($password . md5("lhT")), 0, 4);
+					$replace = substr(md5($password . sha1("lhT")), 0, 4);
 					break;
 				case "H":
-					$replace = substr(md5($password . md5("2x0")), 0, 4);
+					$replace = substr(md5($password . sha1("2x0")), 0, 4);
 					break;
 				case "h":
-					$replace = substr(md5($password . md5("cvk")), 0, 4);
+					$replace = substr(md5($password . sha1("cvk")), 0, 4);
 					break;
 				case "I":
-					$replace = substr(md5($password . md5("qqc")), 0, 4);
+					$replace = substr(md5($password . sha1("qqc")), 0, 4);
 					break;
 				case "i":
-					$replace = substr(md5($password . md5("M2v")), 0, 4);
+					$replace = substr(md5($password . sha1("M2v")), 0, 4);
 					break;
 				case "J":
-					$replace = substr(md5($password . md5("j1v")), 0, 4);
+					$replace = substr(md5($password . sha1("j1v")), 0, 4);
 					break;
 				case "j":
-					$replace = substr(md5($password . md5("H1J")), 0, 4);
+					$replace = substr(md5($password . sha1("H1J")), 0, 4);
 					break;
 				case "K":
-					$replace = substr(md5($password . md5("vXy")), 0, 4);
+					$replace = substr(md5($password . sha1("vXy")), 0, 4);
 					break;
 				case "k":
-					$replace = substr(md5($password . md5("o40")), 0, 4);
+					$replace = substr(md5($password . sha1("o40")), 0, 4);
 					break;
 				case "L":
-					$replace = substr(md5($password . md5("8YU")), 0, 4);
+					$replace = substr(md5($password . sha1("8YU")), 0, 4);
 					break;
 				case "l":
-					$replace = substr(md5($password . md5("pTz")), 0, 4);
+					$replace = substr(md5($password . sha1("pTz")), 0, 4);
 					break;
 				case "M":
-					$replace = substr(md5($password . md5("eLk")), 0, 4);
+					$replace = substr(md5($password . sha1("eLk")), 0, 4);
 					break;
 				case "m":
-					$replace = substr(md5($password . md5("CAe")), 0, 4);
+					$replace = substr(md5($password . sha1("CAe")), 0, 4);
 					break;
 				case "N":
-					$replace = substr(md5($password . md5("4Hr")), 0, 4);
+					$replace = substr(md5($password . sha1("4Hr")), 0, 4);
 					break;
 				case "n":
-					$replace = substr(md5($password . md5("33H")), 0, 4);
+					$replace = substr(md5($password . sha1("33H")), 0, 4);
 					break;
 				case "O":
-					$replace = substr(md5($password . md5("sEH")), 0, 4);
+					$replace = substr(md5($password . sha1("sEH")), 0, 4);
 					break;
 				case "o":
-					$replace = substr(md5($password . md5("w2M")), 0, 4);
+					$replace = substr(md5($password . sha1("w2M")), 0, 4);
 					break;
 				case "P":
-					$replace = substr(md5($password . md5("V8y")), 0, 4);
+					$replace = substr(md5($password . sha1("V8y")), 0, 4);
 					break;
 				case "p":
-					$replace = substr(md5($password . md5("w4w")), 0, 4);
+					$replace = substr(md5($password . sha1("w4w")), 0, 4);
 					break;
 				case "Q":
-					$replace = substr(md5($password . md5("QpZ")), 0, 4);
+					$replace = substr(md5($password . sha1("QpZ")), 0, 4);
 					break;
 				case "q";
-					$replace = substr(md5($password . md5("sth")), 0, 4);
+					$replace = substr(md5($password . sha1("sth")), 0, 4);
 					break;
 				case "R":
-					$replace = substr(md5($password . md5("YJB")), 0, 4);
+					$replace = substr(md5($password . sha1("YJB")), 0, 4);
 					break;
 				case "r":
-					$replace = substr(md5($password . md5("WmM")), 0, 4);
+					$replace = substr(md5($password . sha1("WmM")), 0, 4);
 					break;
 				case "S":
-					$replace = substr(md5($password . md5("f6F")), 0, 4);
+					$replace = substr(md5($password . sha1("f6F")), 0, 4);
 					break;
 				case "s":
-					$replace = substr(md5($password . md5("Izj")), 0, 4);
+					$replace = substr(md5($password . sha1("Izj")), 0, 4);
 					break;
 				case "T":
-					$replace = substr(md5($password . md5("D3U")), 0, 4);
+					$replace = substr(md5($password . sha1("D3U")), 0, 4);
 					break;
 				case "t":
-					$replace = substr(md5($password . md5("NAS")), 0, 4);
+					$replace = substr(md5($password . sha1("NAS")), 0, 4);
 					break;
 				case "U":
-					$replace = substr(md5($password . md5("g8q")), 0, 4);
+					$replace = substr(md5($password . sha1("g8q")), 0, 4);
 					break;
 				case "u":
-					$replace = substr(md5($password . md5("kGJ")), 0, 4);
+					$replace = substr(md5($password . sha1("kGJ")), 0, 4);
 					break;
 				case "V":
-					$replace = substr(md5($password . md5("S4l")), 0, 4);
+					$replace = substr(md5($password . sha1("S4l")), 0, 4);
 					break;
 				case "v":
-					$replace = substr(md5($password . md5("nXJ")), 0, 4);
+					$replace = substr(md5($password . sha1("nXJ")), 0, 4);
 					break;
 				case "W":
-					$replace = substr(md5($password . md5("VPl")), 0, 4);
+					$replace = substr(md5($password . sha1("VPl")), 0, 4);
 					break;
 				case "w":
-					$replace = substr(md5($password . md5("Ryl")), 0, 4);
+					$replace = substr(md5($password . sha1("Ryl")), 0, 4);
 					break;
 				case "X":
-					$replace = substr(md5($password . md5("iu0")), 0, 4);
+					$replace = substr(md5($password . sha1("iu0")), 0, 4);
 					break;
 				case "x":
-					$replace = substr(md5($password . md5("nBz")), 0, 4);
+					$replace = substr(md5($password . sha1("nBz")), 0, 4);
 					break;
 				case "Y":
-					$replace = substr(md5($password . md5("Y3l")), 0, 4);
+					$replace = substr(md5($password . sha1("Y3l")), 0, 4);
 					break;
 				case "y":
-					$replace = substr(md5($password . md5("h3o")), 0, 4);
+					$replace = substr(md5($password . sha1("h3o")), 0, 4);
 					break;
 				case "Z":
-					$replace = substr(md5($password . md5("McF")), 0, 4);
+					$replace = substr(md5($password . sha1("McF")), 0, 4);
 					break;
 				case "z":
-					$replace = substr(md5($password . md5("hxM")), 0, 4);
+					$replace = substr(md5($password . sha1("hxM")), 0, 4);
 					break;
 				case "0":
-					$replace = substr(md5($password . md5("a5H")), 0, 4);
+					$replace = substr(md5($password . sha1("a5H")), 0, 4);
 					break;
 				case "1":
-					$replace = substr(md5($password . md5("zXy")), 0, 4);
+					$replace = substr(md5($password . sha1("zXy")), 0, 4);
 					break;
 				case "2":
-					$replace = substr(md5($password . md5("qpe")), 0, 4);
+					$replace = substr(md5($password . sha1("qpe")), 0, 4);
 					break;
 				case "3":
-					$replace = substr(md5($password . md5("1RW")), 0, 4);
+					$replace = substr(md5($password . sha1("1RW")), 0, 4);
 					break;
 				case "4":
-					$replace = substr(md5($password . md5("8fy")), 0, 4);
+					$replace = substr(md5($password . sha1("8fy")), 0, 4);
 					break;
 				case "5":
-					$replace = substr(md5($password . md5("rIU")), 0, 4);
+					$replace = substr(md5($password . sha1("rIU")), 0, 4);
 					break;
 				case "6":
-					$replace = substr(md5($password . md5("v5o")), 0, 4);
+					$replace = substr(md5($password . sha1("v5o")), 0, 4);
 					break;
 				case "7":
-					$replace = substr(md5($password . md5("rJ8")), 0, 4);
+					$replace = substr(md5($password . sha1("rJ8")), 0, 4);
 					break;
 				case "8":
-					$replace = substr(md5($password . md5("yXa")), 0, 4);
+					$replace = substr(md5($password . sha1("yXa")), 0, 4);
 					break;
 				case "9":
-					$replace = substr(md5($password . md5("Cmm")), 0, 4);
+					$replace = substr(md5($password . sha1("Cmm")), 0, 4);
 					break;
 				case "space":
-					$replace = substr(md5($password . md5("awF")), 0, 4);
+					$replace = substr(md5($password . sha1("awF")), 0, 4);
 					break;
 				case "<":
-					$replace = substr(md5($password . md5("1pI")), 0, 4);
+					$replace = substr(md5($password . sha1("1pI")), 0, 4);
 					break;
 				case ">":
-					$replace = substr(md5($password . md5("UeW")), 0, 4);
+					$replace = substr(md5($password . sha1("UeW")), 0, 4);
 					break;
 				case "!":
-					$replace = substr(md5($password . md5("Ndn")), 0, 4);
+					$replace = substr(md5($password . sha1("Ndn")), 0, 4);
 					break;
 				case ",":
-					$replace = substr(md5($password . md5("HJn")), 0, 4);
+					$replace = substr(md5($password . sha1("HJn")), 0, 4);
 					break;
 				case ";":
-					$replace = substr(md5($password . md5("b1o")), 0, 4);
+					$replace = substr(md5($password . sha1("b1o")), 0, 4);
 					break;
 				case "@":
-					$replace = substr(md5($password . md5("X1B")), 0, 4);
+					$replace = substr(md5($password . sha1("X1B")), 0, 4);
 					break;
 				case "#":
-					$replace = substr(md5($password . md5("ET0")), 0, 4);
+					$replace = substr(md5($password . sha1("ET0")), 0, 4);
 					break;
 				case "-":
-					$replace = substr(md5($password . md5("cHt")), 0, 4);
+					$replace = substr(md5($password . sha1("cHt")), 0, 4);
 					break;
 				case "+":
-					$replace = substr(md5($password . md5("tdB")), 0, 4);
+					$replace = substr(md5($password . sha1("tdB")), 0, 4);
 					break;
 				case "=":
-					$replace = substr(md5($password . md5("CqS")), 0, 4);
+					$replace = substr(md5($password . sha1("CqS")), 0, 4);
 					break;
 				case "(":
-					$replace = substr(md5($password . md5("WTV")), 0, 4);
+					$replace = substr(md5($password . sha1("WTV")), 0, 4);
 					break;
 				case ")":
-					$replace = substr(md5($password . md5("Imz")), 0, 4);
+					$replace = substr(md5($password . sha1("Imz")), 0, 4);
 					break;
 				case '"':
-					$replace = substr(md5($password . md5("xeV")), 0, 4);
+					$replace = substr(md5($password . sha1("xeV")), 0, 4);
 					break;
 				case "£":
-					$replace = substr(md5($password . md5("Yrv")), 0, 4);
+					$replace = substr(md5($password . sha1("Yrv")), 0, 4);
 					break;
 				case "$":
-					$replace = substr(md5($password . md5("PJF")), 0, 4);
+					$replace = substr(md5($password . sha1("PJF")), 0, 4);
 					break;
 				case "%":
-					$replace = substr(md5($password . md5("tdd")), 0, 4);
+					$replace = substr(md5($password . sha1("tdd")), 0, 4);
 					break;
 				case "^":
-					$replace = substr(md5($password . md5("QPh")), 0, 4);
+					$replace = substr(md5($password . sha1("QPh")), 0, 4);
 					break;
 				case "&":
-					$replace = substr(md5($password . md5("OIk")), 0, 4);
+					$replace = substr(md5($password . sha1("OIk")), 0, 4);
 					break;
 				case "*":
-					$replace = substr(md5($password . md5("V1C")), 0, 4);
+					$replace = substr(md5($password . sha1("V1C")), 0, 4);
 					break;
 				case "{":
-					$replace = substr(md5($password . md5("9y9")), 0, 4);
+					$replace = substr(md5($password . sha1("9y9")), 0, 4);
 					break;
 				case "}":
-					$replace = substr(md5($password . md5("VsH")), 0, 4);
+					$replace = substr(md5($password . sha1("VsH")), 0, 4);
 					break;
 				case "[":
-					$replace = substr(md5($password . md5("qKX")), 0, 4);
+					$replace = substr(md5($password . sha1("qKX")), 0, 4);
 					break;
 				case "]":
-					$replace = substr(md5($password . md5("7IO")), 0, 4);
+					$replace = substr(md5($password . sha1("7IO")), 0, 4);
 					break;
 				case ":":
-					$replace = substr(md5($password . md5("4pM")), 0, 4);
+					$replace = substr(md5($password . sha1("4pM")), 0, 4);
 					break;
 				case "'":
-					$replace = substr(md5($password . md5("qqK")), 0, 4);
+					$replace = substr(md5($password . sha1("qqK")), 0, 4);
 					break;
 				case "~":
-					$replace = substr(md5($password . md5("6Dt")), 0, 4);
+					$replace = substr(md5($password . sha1("6Dt")), 0, 4);
 					break;
 				case "?":
-					$replace = substr(md5($password . md5("ix2")), 0, 4);
+					$replace = substr(md5($password . sha1("ix2")), 0, 4);
 					break;
 				case "/":
-					$replace = substr(md5($password . md5("L4g")), 0, 4);
+					$replace = substr(md5($password . sha1("L4g")), 0, 4);
 					break;
 				case "\\":
-					$replace = substr(md5($password . md5("pp5")), 0, 4);
+					$replace = substr(md5($password . sha1("pp5")), 0, 4);
 					break;
 				case "|":
-					$replace = substr(md5($password . md5("bBh")), 0, 4);
+					$replace = substr(md5($password . sha1("bBh")), 0, 4);
 					break;
 				default:
 					$i = 0;
@@ -1353,288 +1353,288 @@ class REnc
 	function REnc_Encrypt_V3_Long($string, $password)
 	{
 		$chars      = str_split($string, 1);
-		$replaced[] = substr(md5($password . md5("RENCV3-LONG")), 0, 6);
+		$replaced[] = substr(md5($password . sha1("RENCV3-LONG")), 0, 6);
 		foreach ($chars as $ch) {
 			$char = str_replace(' ', 'space', $ch);
 			switch ($char) {
 				case "A":
-					$replace = substr(md5($password . md5("DyW")), 0, 6);
+					$replace = substr(md5($password . sha1("DyW")), 0, 6);
 					break;
 				case "a":
-					$replace = substr(md5($password . md5("gJx")), 0, 6);
+					$replace = substr(md5($password . sha1("gJx")), 0, 6);
 					break;
 				case "B":
-					$replace = substr(md5($password . md5("juK")), 0, 6);
+					$replace = substr(md5($password . sha1("juK")), 0, 6);
 					break;
 				case "b":
-					$replace = substr(md5($password . md5("szu")), 0, 6);
+					$replace = substr(md5($password . sha1("szu")), 0, 6);
 					break;
 				case "C":
-					$replace = substr(md5($password . md5("0cJ")), 0, 6);
+					$replace = substr(md5($password . sha1("0cJ")), 0, 6);
 					break;
 				case "c":
-					$replace = substr(md5($password . md5("ujk")), 0, 6);
+					$replace = substr(md5($password . sha1("ujk")), 0, 6);
 					break;
 				case "D":
-					$replace = substr(md5($password . md5("VpE")), 0, 6);
+					$replace = substr(md5($password . sha1("VpE")), 0, 6);
 					break;
 				case "d":
-					$replace = substr(md5($password . md5("Lir")), 0, 6);
+					$replace = substr(md5($password . sha1("Lir")), 0, 6);
 					break;
 				case "E":
-					$replace = substr(md5($password . md5("kUO")), 0, 6);
+					$replace = substr(md5($password . sha1("kUO")), 0, 6);
 					break;
 				case "e":
-					$replace = substr(md5($password . md5("jW2")), 0, 6);
+					$replace = substr(md5($password . sha1("jW2")), 0, 6);
 					break;
 				case "F":
-					$replace = substr(md5($password . md5("lMh")), 0, 6);
+					$replace = substr(md5($password . sha1("lMh")), 0, 6);
 					break;
 				case "f":
-					$replace = substr(md5($password . md5("FGq")), 0, 6);
+					$replace = substr(md5($password . sha1("FGq")), 0, 6);
 					break;
 				case "G":
-					$replace = substr(md5($password . md5("UGC")), 0, 6);
+					$replace = substr(md5($password . sha1("UGC")), 0, 6);
 					break;
 				case "g":
-					$replace = substr(md5($password . md5("lhT")), 0, 6);
+					$replace = substr(md5($password . sha1("lhT")), 0, 6);
 					break;
 				case "H":
-					$replace = substr(md5($password . md5("2x0")), 0, 6);
+					$replace = substr(md5($password . sha1("2x0")), 0, 6);
 					break;
 				case "h":
-					$replace = substr(md5($password . md5("cvk")), 0, 6);
+					$replace = substr(md5($password . sha1("cvk")), 0, 6);
 					break;
 				case "I":
-					$replace = substr(md5($password . md5("qqc")), 0, 6);
+					$replace = substr(md5($password . sha1("qqc")), 0, 6);
 					break;
 				case "i":
-					$replace = substr(md5($password . md5("M2v")), 0, 6);
+					$replace = substr(md5($password . sha1("M2v")), 0, 6);
 					break;
 				case "J":
-					$replace = substr(md5($password . md5("j1v")), 0, 6);
+					$replace = substr(md5($password . sha1("j1v")), 0, 6);
 					break;
 				case "j":
-					$replace = substr(md5($password . md5("H1J")), 0, 6);
+					$replace = substr(md5($password . sha1("H1J")), 0, 6);
 					break;
 				case "K":
-					$replace = substr(md5($password . md5("vXy")), 0, 6);
+					$replace = substr(md5($password . sha1("vXy")), 0, 6);
 					break;
 				case "k":
-					$replace = substr(md5($password . md5("o40")), 0, 6);
+					$replace = substr(md5($password . sha1("o40")), 0, 6);
 					break;
 				case "L":
-					$replace = substr(md5($password . md5("8YU")), 0, 6);
+					$replace = substr(md5($password . sha1("8YU")), 0, 6);
 					break;
 				case "l":
-					$replace = substr(md5($password . md5("pTz")), 0, 6);
+					$replace = substr(md5($password . sha1("pTz")), 0, 6);
 					break;
 				case "M":
-					$replace = substr(md5($password . md5("eLk")), 0, 6);
+					$replace = substr(md5($password . sha1("eLk")), 0, 6);
 					break;
 				case "m":
-					$replace = substr(md5($password . md5("CAe")), 0, 6);
+					$replace = substr(md5($password . sha1("CAe")), 0, 6);
 					break;
 				case "N":
-					$replace = substr(md5($password . md5("4Hr")), 0, 6);
+					$replace = substr(md5($password . sha1("4Hr")), 0, 6);
 					break;
 				case "n":
-					$replace = substr(md5($password . md5("33H")), 0, 6);
+					$replace = substr(md5($password . sha1("33H")), 0, 6);
 					break;
 				case "O":
-					$replace = substr(md5($password . md5("sEH")), 0, 6);
+					$replace = substr(md5($password . sha1("sEH")), 0, 6);
 					break;
 				case "o":
-					$replace = substr(md5($password . md5("w2M")), 0, 6);
+					$replace = substr(md5($password . sha1("w2M")), 0, 6);
 					break;
 				case "P":
-					$replace = substr(md5($password . md5("V8y")), 0, 6);
+					$replace = substr(md5($password . sha1("V8y")), 0, 6);
 					break;
 				case "p":
-					$replace = substr(md5($password . md5("w4w")), 0, 6);
+					$replace = substr(md5($password . sha1("w4w")), 0, 6);
 					break;
 				case "Q":
-					$replace = substr(md5($password . md5("QpZ")), 0, 6);
+					$replace = substr(md5($password . sha1("QpZ")), 0, 6);
 					break;
 				case "q";
-					$replace = substr(md5($password . md5("sth")), 0, 6);
+					$replace = substr(md5($password . sha1("sth")), 0, 6);
 					break;
 				case "R":
-					$replace = substr(md5($password . md5("YJB")), 0, 6);
+					$replace = substr(md5($password . sha1("YJB")), 0, 6);
 					break;
 				case "r":
-					$replace = substr(md5($password . md5("WmM")), 0, 6);
+					$replace = substr(md5($password . sha1("WmM")), 0, 6);
 					break;
 				case "S":
-					$replace = substr(md5($password . md5("f6F")), 0, 6);
+					$replace = substr(md5($password . sha1("f6F")), 0, 6);
 					break;
 				case "s":
-					$replace = substr(md5($password . md5("Izj")), 0, 6);
+					$replace = substr(md5($password . sha1("Izj")), 0, 6);
 					break;
 				case "T":
-					$replace = substr(md5($password . md5("D3U")), 0, 6);
+					$replace = substr(md5($password . sha1("D3U")), 0, 6);
 					break;
 				case "t":
-					$replace = substr(md5($password . md5("NAS")), 0, 6);
+					$replace = substr(md5($password . sha1("NAS")), 0, 6);
 					break;
 				case "U":
-					$replace = substr(md5($password . md5("g8q")), 0, 6);
+					$replace = substr(md5($password . sha1("g8q")), 0, 6);
 					break;
 				case "u":
-					$replace = substr(md5($password . md5("kGJ")), 0, 6);
+					$replace = substr(md5($password . sha1("kGJ")), 0, 6);
 					break;
 				case "V":
-					$replace = substr(md5($password . md5("S4l")), 0, 6);
+					$replace = substr(md5($password . sha1("S4l")), 0, 6);
 					break;
 				case "v":
-					$replace = substr(md5($password . md5("nXJ")), 0, 6);
+					$replace = substr(md5($password . sha1("nXJ")), 0, 6);
 					break;
 				case "W":
-					$replace = substr(md5($password . md5("VPl")), 0, 6);
+					$replace = substr(md5($password . sha1("VPl")), 0, 6);
 					break;
 				case "w":
-					$replace = substr(md5($password . md5("Ryl")), 0, 6);
+					$replace = substr(md5($password . sha1("Ryl")), 0, 6);
 					break;
 				case "X":
-					$replace = substr(md5($password . md5("iu0")), 0, 6);
+					$replace = substr(md5($password . sha1("iu0")), 0, 6);
 					break;
 				case "x":
-					$replace = substr(md5($password . md5("nBz")), 0, 6);
+					$replace = substr(md5($password . sha1("nBz")), 0, 6);
 					break;
 				case "Y":
-					$replace = substr(md5($password . md5("Y3l")), 0, 6);
+					$replace = substr(md5($password . sha1("Y3l")), 0, 6);
 					break;
 				case "y":
-					$replace = substr(md5($password . md5("h3o")), 0, 6);
+					$replace = substr(md5($password . sha1("h3o")), 0, 6);
 					break;
 				case "Z":
-					$replace = substr(md5($password . md5("McF")), 0, 6);
+					$replace = substr(md5($password . sha1("McF")), 0, 6);
 					break;
 				case "z":
-					$replace = substr(md5($password . md5("hxM")), 0, 6);
+					$replace = substr(md5($password . sha1("hxM")), 0, 6);
 					break;
 				case "0":
-					$replace = substr(md5($password . md5("a5H")), 0, 6);
+					$replace = substr(md5($password . sha1("a5H")), 0, 6);
 					break;
 				case "1":
-					$replace = substr(md5($password . md5("zXy")), 0, 6);
+					$replace = substr(md5($password . sha1("zXy")), 0, 6);
 					break;
 				case "2":
-					$replace = substr(md5($password . md5("qpe")), 0, 6);
+					$replace = substr(md5($password . sha1("qpe")), 0, 6);
 					break;
 				case "3":
-					$replace = substr(md5($password . md5("1RW")), 0, 6);
+					$replace = substr(md5($password . sha1("1RW")), 0, 6);
 					break;
 				case "4":
-					$replace = substr(md5($password . md5("8fy")), 0, 6);
+					$replace = substr(md5($password . sha1("8fy")), 0, 6);
 					break;
 				case "5":
-					$replace = substr(md5($password . md5("rIU")), 0, 6);
+					$replace = substr(md5($password . sha1("rIU")), 0, 6);
 					break;
 				case "6":
-					$replace = substr(md5($password . md5("v5o")), 0, 6);
+					$replace = substr(md5($password . sha1("v5o")), 0, 6);
 					break;
 				case "7":
-					$replace = substr(md5($password . md5("rJ8")), 0, 6);
+					$replace = substr(md5($password . sha1("rJ8")), 0, 6);
 					break;
 				case "8":
-					$replace = substr(md5($password . md5("yXa")), 0, 6);
+					$replace = substr(md5($password . sha1("yXa")), 0, 6);
 					break;
 				case "9":
-					$replace = substr(md5($password . md5("Cmm")), 0, 6);
+					$replace = substr(md5($password . sha1("Cmm")), 0, 6);
 					break;
 				case "space":
-					$replace = substr(md5($password . md5("awF")), 0, 6);
+					$replace = substr(md5($password . sha1("awF")), 0, 6);
 					break;
 				case "<":
-					$replace = substr(md5($password . md5("1pI")), 0, 6);
+					$replace = substr(md5($password . sha1("1pI")), 0, 6);
 					break;
 				case ">":
-					$replace = substr(md5($password . md5("UeW")), 0, 6);
+					$replace = substr(md5($password . sha1("UeW")), 0, 6);
 					break;
 				case "!":
-					$replace = substr(md5($password . md5("Ndn")), 0, 6);
+					$replace = substr(md5($password . sha1("Ndn")), 0, 6);
 					break;
 				case ",":
-					$replace = substr(md5($password . md5("HJn")), 0, 6);
+					$replace = substr(md5($password . sha1("HJn")), 0, 6);
 					break;
 				case ";":
-					$replace = substr(md5($password . md5("b1o")), 0, 6);
+					$replace = substr(md5($password . sha1("b1o")), 0, 6);
 					break;
 				case "@":
-					$replace = substr(md5($password . md5("X1B")), 0, 6);
+					$replace = substr(md5($password . sha1("X1B")), 0, 6);
 					break;
 				case "#":
-					$replace = substr(md5($password . md5("ET0")), 0, 6);
+					$replace = substr(md5($password . sha1("ET0")), 0, 6);
 					break;
 				case "-":
-					$replace = substr(md5($password . md5("cHt")), 0, 6);
+					$replace = substr(md5($password . sha1("cHt")), 0, 6);
 					break;
 				case "+":
-					$replace = substr(md5($password . md5("tdB")), 0, 6);
+					$replace = substr(md5($password . sha1("tdB")), 0, 6);
 					break;
 				case "=":
-					$replace = substr(md5($password . md5("CqS")), 0, 6);
+					$replace = substr(md5($password . sha1("CqS")), 0, 6);
 					break;
 				case "(":
-					$replace = substr(md5($password . md5("WTV")), 0, 6);
+					$replace = substr(md5($password . sha1("WTV")), 0, 6);
 					break;
 				case ")":
-					$replace = substr(md5($password . md5("Imz")), 0, 6);
+					$replace = substr(md5($password . sha1("Imz")), 0, 6);
 					break;
 				case '"':
-					$replace = substr(md5($password . md5("xeV")), 0, 6);
+					$replace = substr(md5($password . sha1("xeV")), 0, 6);
 					break;
 				case "£":
-					$replace = substr(md5($password . md5("Yrv")), 0, 6);
+					$replace = substr(md5($password . sha1("Yrv")), 0, 6);
 					break;
 				case "$":
-					$replace = substr(md5($password . md5("PJF")), 0, 6);
+					$replace = substr(md5($password . sha1("PJF")), 0, 6);
 					break;
 				case "%":
-					$replace = substr(md5($password . md5("tdd")), 0, 6);
+					$replace = substr(md5($password . sha1("tdd")), 0, 6);
 					break;
 				case "^":
-					$replace = substr(md5($password . md5("QPh")), 0, 6);
+					$replace = substr(md5($password . sha1("QPh")), 0, 6);
 					break;
 				case "&":
-					$replace = substr(md5($password . md5("OIk")), 0, 6);
+					$replace = substr(md5($password . sha1("OIk")), 0, 6);
 					break;
 				case "*":
-					$replace = substr(md5($password . md5("V1C")), 0, 6);
+					$replace = substr(md5($password . sha1("V1C")), 0, 6);
 					break;
 				case "{":
-					$replace = substr(md5($password . md5("9y9")), 0, 6);
+					$replace = substr(md5($password . sha1("9y9")), 0, 6);
 					break;
 				case "}":
-					$replace = substr(md5($password . md5("VsH")), 0, 6);
+					$replace = substr(md5($password . sha1("VsH")), 0, 6);
 					break;
 				case "[":
-					$replace = substr(md5($password . md5("qKX")), 0, 6);
+					$replace = substr(md5($password . sha1("qKX")), 0, 6);
 					break;
 				case "]":
-					$replace = substr(md5($password . md5("7IO")), 0, 6);
+					$replace = substr(md5($password . sha1("7IO")), 0, 6);
 					break;
 				case ":":
-					$replace = substr(md5($password . md5("4pM")), 0, 6);
+					$replace = substr(md5($password . sha1("4pM")), 0, 6);
 					break;
 				case "'":
-					$replace = substr(md5($password . md5("qqK")), 0, 6);
+					$replace = substr(md5($password . sha1("qqK")), 0, 6);
 					break;
 				case "~":
-					$replace = substr(md5($password . md5("6Dt")), 0, 6);
+					$replace = substr(md5($password . sha1("6Dt")), 0, 6);
 					break;
 				case "?":
-					$replace = substr(md5($password . md5("ix2")), 0, 6);
+					$replace = substr(md5($password . sha1("ix2")), 0, 6);
 					break;
 				case "/":
-					$replace = substr(md5($password . md5("L4g")), 0, 6);
+					$replace = substr(md5($password . sha1("L4g")), 0, 6);
 					break;
 				case "\\":
-					$replace = substr(md5($password . md5("pp5")), 0, 6);
+					$replace = substr(md5($password . sha1("pp5")), 0, 6);
 					break;
 				case "|":
-					$replace = substr(md5($password . md5("bBh")), 0, 6);
+					$replace = substr(md5($password . sha1("bBh")), 0, 6);
 					break;
 				default:
 					$i = 0;
