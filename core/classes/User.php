@@ -40,5 +40,11 @@ class User {
 		}
 	}
 	///////TODO: Make user data a thing
+	public function GetData() {
+		return "Not Implemented!";
+	}
+	public function BuyProduct() {
+		return "Not Implemented!";
+	}
 }
 ?>
