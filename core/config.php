@@ -56,7 +56,6 @@ if (!isset($currency)) { $currency = "GBP"; }
 if (!isset($currency_format)) { $currency_format = "english"; }
 //////////DO NOT CHANGE\\\\\\\\\\
 define("BASE_URL", "/");
-define("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"]."/");
-define("INSTALL_DIR", $_SERVER["DOCUMENT_ROOT"] . "/" . $install_dir . "/");
+define("INSTALL_DIR", dirname(__FILE__) + ".." + DIRECTORY_SEPARATOR);
 ini_set('default_charset', 'utf-8');
 ?>
