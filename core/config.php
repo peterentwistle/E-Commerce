@@ -12,7 +12,7 @@ $db_name = "E-Commerce";
 //Shop Data Encryption
 $shopEncryptionKey = "RANDOMTEXTHERE"; //NOT LOADED BY DB FOR SAFETY
 //Server install directory (FROM THE HTDOCS LOCATION) (BLANK IF IN ROOT)
-$install_dir = "E-Commerce";
+$installD = "E-Commerce";
 /////////////////TESTING\\\\\\\\\\\\\\\\\\\\\
 
 $currentTheme = "default";
@@ -56,6 +56,6 @@ if (!isset($currency)) { $currency = "GBP"; }
 if (!isset($currency_format)) { $currency_format = "english"; }
 //////////DO NOT CHANGE\\\\\\\\\\
 define("BASE_URL", "/");
-define("INSTALL_DIR", dirname(__FILE__) + ".." + DIRECTORY_SEPARATOR);
+define("INSTALL_DIR", "/" + $installDir);
 ini_set('default_charset', 'utf-8');
 ?>
