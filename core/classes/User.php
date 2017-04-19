@@ -20,7 +20,7 @@ class User {
 			while($row = $result->fetch_assoc()) {
 				//TODO: Make it so that there is a token expiry time
 				$time = date('siHdmY');
-				if ($row["timeout"] < $time) {
+				if ($row["Expiry"] < $time) {
 					return true;
 				} else {
 					return false;
