@@ -12,7 +12,7 @@ $db_name = "E-Commerce";
 //Shop Data Encryption
 $shopEncryptionKey = "RANDOMTEXTHERE"; //NOT LOADED BY DB FOR SAFETY
 //Server install directory (FROM THE HTDOCS LOCATION) (BLANK IF IN ROOT)
-$installD = "E-Commerce";
+$installD = "E-Commerce"; //NO FINAL "/"
 /////////////////TESTING\\\\\\\\\\\\\\\\\\\\\
 
 $currentTheme = "default";
