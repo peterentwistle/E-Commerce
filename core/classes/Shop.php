@@ -1,4 +1,5 @@
 <?php
+//TODO: Clean up and revise/add more (When DB Support Enabled)
 class Shop {
 
 	public function listItems($itemArray, $currency, $currency_format) {
@@ -7,6 +8,20 @@ class Shop {
 			' costs: '.$this->displayCurrency($currency).
 			$this->currencyFormat($currency_format, $item["price"]).'<a></p>';
 		}
+		//NEED TO TEST THEN ENABLE:
+		/*require_once("inc/includes.php");
+		global $dbcon;
+		$sql = "SELECT * FROM items";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				data[ ] = $row; //NEED TO CHECK LATER
+			}
+			return data;
+		} else {
+			return "";
+		}*/
 	}
 
 	public function displayItemDetails($itemId, $items, $currency, $currency_format) {
@@ -65,20 +80,10 @@ class Shop {
 	}
 
 	public function displayCurrency($currency) {
-		switch ($currency) {
-			case 'GBP':
-				return "£";
-				break;
-			case 'USD':
-				return "$";
-				break;
-			case 'EUR':
-				return "€";
-				break;
-			default:
-				return "£";
-				break;
-		}
+		//I am creating a custom currencyConfig for this
+		require_once("/inc/includes.php");
+		$Currency = new Currency;
+		return $Currency->displayCurrency($currency);
 	}
 
 	public function currencyFormat($currency_format, $number) {
@@ -111,7 +116,7 @@ class Shop {
 			return $output;
 		} else if ($numItems <= 2) {
 			for($i = 1; $i <=2; $i++) {
-				$output .= '<div class="featured" onclick="location.href=\'shop.php?item='.$i.'\'">'.
+				$output .= '<div class="featured" onclick="location.href=\'index.php?src=shop&item='.$i.'\'">'.
 				$this->homeItemDisplay($i, $items, $currency, $currency_format)
 				.'<div>';
 			}
@@ -122,7 +127,7 @@ class Shop {
 				if (in_array($randNum, $itemArray)) {
 					$i--;
 				} else {
-					$output .= '<div class="featured" onclick="location.href=\'shop.php?item='.$randNum.'\'">'.
+					$output .= '<div class="featured" onclick="location.href=\'index.php?src=shop&item='.$randNum.'\'">'.
 					$this->homeItemDisplay($randNum, $items, $currency, $currency_format)
 					.'</div>';
 					array_push($itemArray, $randNum);

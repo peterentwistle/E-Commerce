@@ -1,4 +1,4 @@
 <?php
-// Change user, pass, database later
-$dbcon = mysqli_connect(host, username, password, dbname);
+require_once('config.php');
+$dbcon = new mysqli($db_host, $db_user, $db_pass, $db_name);
 ?>

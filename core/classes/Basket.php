@@ -1,4 +1,5 @@
 <?php
+//TODO: Clean up and revise/add more (When DB Support Enabled)
 class Basket {
 	private $shop;
 
