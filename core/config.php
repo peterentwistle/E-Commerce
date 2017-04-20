@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
 	///Set the currency format
 	$currency_format = "english";
 	//Set the default directory
-	$installDir = "";
+	$installDir = "/";
 }
 
 //Check that they are set
@@ -57,9 +57,9 @@ if (!isset($shopTitle)) { $shopTitle = "E-Commerce the Open Source Project"; }
 if (!isset($footerCopy)) { $footerCopy = '&copy;'.date('Y').' Peter Entwistle and Rover656. Check out the source code on <a href="http://github.com/Rover656/E-Commerce">GitHub</a>'; }
 if (!isset($currency)) { $currency = "GBP"; }
 if (!isset($currency_format)) { $currency_format = "english"; }
-if (!isset($currency_format)) { $installDir = ""; }
+if (!isset($currency_format)) { $installDir = "/"; }
 //////////DO NOT CHANGE\\\\\\\\\\
 define("BASE_URL", "/");
-define("INSTALL_DIR", "/" + $installDir + "/");
+define("INSTALL_DIR", $installDir);
 ini_set('default_charset', 'utf-8');
 ?>
